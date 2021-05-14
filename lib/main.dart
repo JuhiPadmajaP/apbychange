@@ -69,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   void initState() {
     FBCloudMessaging.instance.takeFCMTokenWhenAppLaunch();
     FBCloudMessaging.instance.initLocalNotification();
-    _tabController = new TabController(vsync: this, length: 3);
+    _tabController = new TabController(vsync: this, length: 2);
     _tabController.addListener(_handleTabSelection);
     _takeMyData();
     super.initState();

@@ -117,7 +117,7 @@ class Utils {
     List<int> replyCommentIndex = List<int>();
     for (int i = 0; i < _originalData.length; i++) {
       for (int j = 0; j < _originalData.length; j++) {
-        if (_originalData[i]['commentID'] == _originalData[j]['toCommentID']) {
+        if (_originalData[j].data().containsKey("toCommentID") && _originalData[i]['commentID'] == _originalData[j]['toCommentID']) {
           List<DocumentSnapshot> savedCommentData;
           if (commentDocuments[_originalData[i]['commentID']] != null &&
               commentDocuments[_originalData[i]['commentID']].length > 0) {

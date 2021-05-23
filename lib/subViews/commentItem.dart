@@ -38,7 +38,7 @@ class _CommentItem extends State<CommentItem> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: widget.data['toCommentID'] == null
+      padding: widget.data.data()['toCommentID'] == null
           ? EdgeInsets.all(8.0)
           : EdgeInsets.fromLTRB(34.0, 8.0, 8.0, 8.0),
       child: Stack(
@@ -49,10 +49,10 @@ class _CommentItem extends State<CommentItem> {
               Padding(
                 padding: const EdgeInsets.fromLTRB(6.0, 2.0, 10.0, 2.0),
                 child: Container(
-                    width: widget.data['toCommentID'] == null ? 48 : 40,
-                    height: widget.data['toCommentID'] == null ? 48 : 40,
+                    width: widget.data.data()['toCommentID'] == null ? 48 : 40,
+                    height: widget.data.data()['toCommentID'] == null ? 48 : 40,
                     child:
-                        Image.asset('images/${widget.data['userThumbnail']}')),
+                        Image.asset('images/${widget.data.data()['userThumbnail']}')),
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -73,7 +73,7 @@ class _CommentItem extends State<CommentItem> {
                           ),
                           Padding(
                             padding: const EdgeInsets.only(left: 4.0),
-                            child: widget.data['toCommentID'] == null
+                            child: widget.data.data()['toCommentID'] == null
                                 ? Text(
                                     widget.data['commentContent'],
                                     maxLines: null,
@@ -99,7 +99,7 @@ class _CommentItem extends State<CommentItem> {
                       ),
                     ),
                     width: widget.size.width -
-                        (widget.data['toCommentID'] == null ? 90 : 110),
+                        (widget.data.data()['toCommentID'] == null ? 90 : 110),
                     decoration: BoxDecoration(
                       color: Colors.grey[300],
                       borderRadius: BorderRadius.all(Radius.circular(15.0)),
